@@ -7,9 +7,9 @@ stage ('Build image') {
 app=docker.build ("xavki/nginx") 
 }
 stage ('Test') {
-docker.image ("xavki/nginx").withRun ('-p 8080:80') { c->
+docker.image ("xavki/nginx").withRun ('-p 8081:80') { c->
 sh 'docker ps'
-sh 'curl -s http://localhost:8080'
+sh 'curl -s http://localhost:8081'
 }
 }
 }
